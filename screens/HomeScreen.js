@@ -1,11 +1,12 @@
 import { StyleSheet, Text, View } from "react-native";
 import React from "react";
-import { TouchableOpacity } from "react-native-web";
+import { TouchableOpacity } from "react-native";
+import { auth } from "../firebase";
 
 const HomeScreen = () => {
   return (
     <View style={styles.container}>
-      <Text>Email: </Text>
+      <Text>Email: {auth.currentUser?.email} </Text>
       <TouchableOpacity style={styles.button}>
         <Text style={styles.buttonText}>Sign out</Text>
       </TouchableOpacity>
